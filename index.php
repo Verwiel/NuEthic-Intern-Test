@@ -1,27 +1,15 @@
 <?php
-  $name = $_POST['name'];
-  $email = $_POST['email'];
-  $phone = $_POST['phone'];
-  $message = $_POST['message'];
 
-  $email_from = 'test@test.com';
+if (isset($_POST['submit'])) {
+$name = $_POST['name'];
+$emailFrom = $_POST['email'];
+$phone = $_POST['phone'];
+$message = $_POST['message'];
 
-  $email_subject = "New Contact";
+$emailTo = "drew_verwiel@outlook.com";
+$headers = "From: ".$emailFrom;
+$txt = "You have received an e-mail from ".$name.".\n\n".$message;
 
-  $email_body = "Name: $name.\n".
-                "Email: $email.\n".
-                "Phone: $phone.\n".
-                "User Message: $message.\n";
-
-  $to = "drew_verwiel@outlook.com";
-
-  $headers = "From: $email_from \r\n";
-
-  $headers .= "Reply-To: $email \r\n";
-
-  mail($to,email_subject,$email_body,$headers);
-
-  header("Location: index.html");
-
-
-?>
+mail($emailTo, $phone, $txt, $headers);
+header("Location: index.php?emailsent");
+}

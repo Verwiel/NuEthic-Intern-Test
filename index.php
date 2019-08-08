@@ -1,4 +1,6 @@
 <?php 
+  include_once("index.html");
+
   $name = $_POST['name'];
   $email = $_POST['email'];
   $phone = $_POST['phone'];

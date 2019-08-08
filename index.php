@@ -1,15 +1,45 @@
 <?php
-
-if (isset($_POST['submit'])) {
-$name = $_POST['name'];
-$mailFrom = $_POST['email'];
-$phone = $_POST['phone'];
-$message = $_POST['message'];
-
-$mailTo = "drew_verwiel@outlook.com";
-$headers = "From: ".$mailFrom;
-$txt = "You have received an e-mail from ".$name.".\n\n".$message;
-
-mail($mailTo, $phone, $txt, $headers);
-header("Location: index.php?mailsend");
+ 
+if($_POST) {
+    $visitor_name = "";
+    $visitor_email = "";
+    $visitor_phone = "";
+    $email_title = "";
+    $visitor_message = "";
+     
+    if(isset($_POST['visitor_name'])) {
+        $visitor_name = filter_var($_POST['visitor_name'], FILTER_SANITIZE_STRING);
+    }
+     
+    if(isset($_POST['visitor_email'])) {
+        $visitor_email = str_replace(array("\r", "\n", "%0a", "%0d"), '', $_POST['visitor_email']);
+        $visitor_email = filter_var($visitor_email, FILTER_VALIDATE_EMAIL);
+    }
+     
+    if(isset($_POST['email_title'])) {
+        $email_title = filter_var($_POST['email_title'], FILTER_SANITIZE_STRING);
+    }
+     
+    if(isset($_POST['visitor_phone'])) {
+        $visitor_phone = filter_var($_POST['visitor_phone'], FILTER_SANITIZE_STRING);
+    }
+     
+    if(isset($_POST['message'])) {
+        $message = htmlspecialchars($_POST['message']);
+    }
+     
+    $headers  = 'MIME-Version: 1.0' . "\r\n"
+    .'Content-type: text/html; charset=utf-8' . "\r\n"
+    .'From: ' . $visitor_email . "\r\n";
+     
+    if(mail($recipient, $email_title, $visitor_message, $headers)) {
+        echo "<p>Thank you for contacting us, $visitor_name. You will get a reply within 24 hours.</p>";
+    } else {
+        echo '<p>We are sorry but the email did not go through.</p>';
+    }
+     
+} else {
+    echo '<p>Something went wrong</p>';
 }
+ 
+?>

@@ -1,66 +1,182 @@
+html, body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+main {
+  margin: 2%;
+}
+
+/* Header */
 header {
   width: 100%;
-  height: 15em;
-  background-color: gray;
-}
-
-.col {
-  float: left;
-  width: 25%;
-  padding: 0 10px;
-}
-
-.row {
-  margin: 0 -5px;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.card {
-  padding: 16px;
+  height: 25em;
+  background-image: url(images/Banner.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
   margin: auto;
-  text-align: center;
-  font-family: arial;
 }
 
+.heading {
+  padding-left: 5%;
+  padding-top: 5%;
+}
+
+.banner {
+  margin: 0;
+  color: white;
+  text-align: center;
+  padding: 1em;
+  border-top: 15px solid black;
+  background-color: rgb(0, 88, 162);
+}
+
+/* Product Cards */
 .collections {
   justify-content: space-between;
   display: flex;
 }
 
-/* form {
-	width: 100px;
-	height: 50px;
-	transform: skew(-20deg);
-	background: #555;
-} */
+.card-container {
+  background-color:red;
+  justify-content: space-between;
+  display: flex;
+  width: 100%;
+}
 
-.banner {
-  color: white;
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+}
+
+.card {
+  padding: 16px;
+  margin: 0;
   text-align: center;
-  padding: 1em;
-  background-color: rgb(0, 88, 162);
+  font-family: arial;
+  background-color: rgb(240, 240, 240);
+  display: flex;
+  flex-direction: column;
 }
 
-.fullPrice {
-  color: rgb(187, 0, 0);
-  text-decoration: line-through;
+.img {
+  position: relative; 
+  float: left; 
+  width:  300px;
+  height: 300px;
+  background-position: 50% 50%;
+  background-repeat:   no-repeat;
+  background-size:     cover;
 }
 
-.salePrice {
-  font-weight: bold;
+.button-prev,
+.button-next {
+  position: absolute;
+  top: 50%;
+  width: 27px;
+  height: 44px;
+  margin-top: -22px;
+  z-index: 10;
+  cursor: pointer;
+  background-size: 27px 44px;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
+.pagination {
+  position: absolute;
+  text-align: center;
+  -webkit-transition: 300ms opacity;
+  -o-transition: 300ms opacity;
+  transition: 300ms opacity;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  z-index: 8;
+}
+
+
+/* Card Information */
 .discount {
-  height: 3em;
-  width: 3em;
+  height: 50px;
+  width: 50px;
   color: white;
   font-weight: bold;
   border-radius: 50%;
   background-color: rgb(255, 73, 26);
+  text-align: center;
+  margin-bottom: -8%;
+  margin-left: 275px
+}
 
+.pricing {
+  justify-content: center;
+  display: flex;
+}
+
+.fullPrice {
+  color: rgb(187, 0, 0);
+  text-decoration-line: line-through;
+  padding-right: 5px;
+}
+
+.salePrice {
+  font-weight: bold;
+  padding-left: 5px;
+}
+
+/* Contact */
+footer{
+  display: flex;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-bottom: 2em
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+/* Form */
+.form-container {
+  background-color: rgb(78, 142, 252);
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  transform: skew(-6deg);
+}
+
+label {
+  display: block;
+}
+
+form {
+  transform: skew(6deg);
+  text-align: left;
+  height: 100%;
+  margin: 5%;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: .5em
+}
+
+form button {
+  background-color: rgb(78, 142, 252); /* Green */
+  border: 3px solid white;
+  color: white;
+  padding: .5em;
+  text-align: center;
+  font-weight: bold;
 }

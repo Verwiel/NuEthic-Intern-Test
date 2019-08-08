@@ -8,9 +8,10 @@
   <body>
     <header>
       <p class="banner">SALES: <strong>Up to 50% OFF </strong>on selected items</p>
-      <h1>SALES</h1>
-      <p>Up to 50% OFF</p>
-      <!-- sunglasses image -->
+      <div class="heading">
+        <h1>SALES</h1>
+        <p>Up to 50% OFF</p>
+      </div>
     </header>    
 
     <main>
@@ -20,72 +21,107 @@
       </section>
       <!-- Image slideshow with the following information -->
       
-      <div class="row">
-        <div class="col">
+      <div class="card-container">
+        <div class="wrapper">
           <section class="card">
             <p class="discount">-15%</p>
-            <img src="#" alt="...">
+            <img class="img" src="images/Aviator.jpg" alt="Carbon Black Sunglasses">
             <p>CARBON BLACK - CHROME WARWICK</p>
+            <div class="pricing">
             <span class="fullPrice">$40</span>
-            <span class="salePrice">$34</span>
+            <span class="salePrice"> $34</span>
+            </div>
           </section>
-        </div>
-      
-        <div class="col">
+        
           <section class="card">
             <p class="discount">-50%</p>
-            <img src="#" alt="...">
+            <img class="img" src="images/brown.jpg" alt="Gold Sunglasses">
             <p>GOLD - YELLOW HILLS</p>
-            <span class="fullPrice">$40</span>
-            <span class="salePrice">$20</span>
+            <div class="pricing">
+              <span class="fullPrice">$40</span>
+              <span class="salePrice">$20</span>
+            </div>
           </section>
-        </div>
 
-        <div class="col">
           <section class="card">
             <p class="discount">-15%</p>
-            <img src="#" alt="...">
+            <img class="img" src="images/black.jpg" alt="Black Sunglasses">
             <p>BLACK - DARK LAX</p>
-            <span class="fullPrice">$40</span>
-            <span class="salePrice">$34</span>
+            <div class="pricing">
+              <span class="fullPrice">$40</span>
+              <span class="salePrice">$34</span>
+            </div>
           </section>
-        </div>
-
-        <div class="col">
+     
           <section class="card">
             <p class="discount">-10%</p>
-            <img src="#" alt="...">
+            <img class="img" src="images/blue.jpg" alt="Air Sunglasses">
             <p>AIR - SKY ONE</p>
-            <span class="fullPrice">$25</span>
-            <span class="salePrice">$22.50</span>
+            <div class="pricing">
+              <span class="fullPrice">$25</span>
+              <span class="salePrice">$22.50</span>
+            </div>
           </section>
         </div>
-
+        <!-- Add Pagination -->
+        <div class="pagination"></div>
+        <!-- Add Arrows -->
+        <div class="button-next"></div>
+        <div class="button-prev"></div>
       </div>
+
     </main>
 
     <footer>
-      <p>Contact Us</p>
-      <p>Send us a message to let us know how we can help. We typically respond within 24 hours.</p>
-      <p>You can also give us a call <a href="#">1-801-994-6987</a></p>
-      <p>Or send us an email<br />at <a href="#">contact@nuethic.com</a></p>
+      <section class="contact-container">
+        <h2 style="text-align: center">Contact Us</h2>
+        <p>Send us a message to let us know how we can help. We typically respond within 24 hours.</p>
+        <p>You can also give us a call <a href="#">1-801-994-6987</a></p>
+        <p>Or send us an email<br />at <a href="#">contact@nuethic.com</a></p>
+      </section>
 
       <!-- form -->
-      <form>
-        <label>Name</label>
-        <input type="text" placeholder="Name" />
-
-        <label>Email</label>
-        <input type="text" placeholder="Name" />
-
-        <label>Phone</label>
-        <input type="text" placeholder="Name" />
-
-        <label>What can we do for you?</label>
-        <textarea placeholder="Tell us more..."></textarea>
-
-        <button type=submit>Submit</button>
-      </form>
+      <section class="form-container">
+        <form>
+          <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder=" Name" />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder=" Email" />
+          </div>
+          <div>
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" placeholder=" Phone" />
+          </div>
+          <div>
+            <label>What can we do for you?</label>
+            <textarea style="height:10em" placeholder=" Tell us more..."></textarea>
+          </div>
+          <div>
+            <button type=submit>Submit</button>
+          </div>
+        </form>
+      </section>
     </footer>
+
+    <script>
+        var swiper = new Swiper('.card-container', {
+          slidesPerView: 4,
+          spaceBetween: 25,
+          slidesPerGroup: 4,
+          loop: true,
+          loopFillGroupWithBlank: true,
+          pagination: {
+            el: '.pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.button-next',
+            prevEl: '.button-prev',
+          },
+        });
+      </script>
   </body>
 </html>

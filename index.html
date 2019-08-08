@@ -82,18 +82,18 @@
 
       <!-- form -->
       <section class="form-container">
-        <form id="contact-form" method="post" action="index.php">
+        <form id="contact-form" method="POST" action="index.php">
           <div>
             <label for="name">Name</label>
-            <input type="text" name="visitor_name" placeholder=" Name" />
+            <input type="text" name="name" placeholder=" Name" />
           </div>
           <div>
             <label for="email">Email</label>
-            <input type="email" name="visitor_email" placeholder=" Email" />
+            <input type="email" name="email" placeholder=" Email" />
           </div>
           <div>
             <label for="phone">Phone</label>
-            <input type="tel" name="visitor_phone" placeholder=" Phone" />
+            <input type="tel" name="phone" placeholder=" Phone" />
           </div>
           <div>
             <label>What can we do for you?</label>
@@ -105,23 +105,5 @@
         </form>
       </section>
     </footer>
-
-    <script>
-        var swiper = new Swiper('.card-container', {
-          slidesPerView: 4,
-          spaceBetween: 25,
-          slidesPerGroup: 4,
-          loop: true,
-          loopFillGroupWithBlank: true,
-          pagination: {
-            el: '.pagination',
-            clickable: true,
-          },
-          navigation: {
-            nextEl: '.button-next',
-            prevEl: '.button-prev',
-          },
-        });
-      </script>
   </body>
 </html>

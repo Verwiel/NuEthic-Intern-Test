@@ -27,7 +27,7 @@
  
      
  
-    $first_name = $_POST['name']; // required
+    $name = $_POST['name']; // required
     $email_from = $_POST['email']; // required
     $phone = $_POST['phone']; // not required
     $message = $_POST['message']; // required
@@ -46,7 +46,7 @@
   }
  
   if(strlen($message) < 2) {
-    $error_message .= 'The Comments you entered do not appear to be valid.<br />';
+    $error_message .= 'The Message you entered do not appear to be valid.<br />';
   }
  
   if(strlen($error_message) > 0) {

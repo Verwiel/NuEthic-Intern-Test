@@ -146,6 +146,11 @@ footer{
   width: 50%;
 }
 
+footer p {
+  margin: 5px;
+  font-size: 12px
+}
+
 /* Form */
 .form-container {
   background-color: rgb(78, 142, 252);
@@ -164,6 +169,7 @@ form {
   text-align: left;
   height: 100%;
   margin: 5%;
+  padding: .5em;
 }
 
 form div {

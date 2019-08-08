@@ -152,7 +152,7 @@ form div {
   margin-bottom: .5em
 }
 
-form button {
+.button {
   background-color: rgb(78, 142, 252); /* Green */
   border: 3px solid white;
   color: white;

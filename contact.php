@@ -7,7 +7,7 @@ Thanks for your message!
   $userPhone    = $_POST['phone'];
   $userMessage 		= $_POST['message'];
   
-	$to 			= "audreyrosewood20@gmail.com";
+	$to 			= "drew_verwiel@outlook.com";
   $subject 		= "Intern Test Contact Form Submission";
   
 	$body 			= "Information Submitted:";

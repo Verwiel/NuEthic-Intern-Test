@@ -1,22 +1,20 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-require_once './vendor/autoload.php';
-
-use FormGuide\Handlx\FormHandler;
-
-
-$pp = new FormHandler();
-
-$validator = $pp->getValidator();
-$validator->fields(['name','email', 'message'])->areRequired()->maxLength(50);
-$validator->field('Email')->isEmail();
-$validator->field('Message')->maxLength(6000);
-
-$pp->sendEmailTo('drew_verwiel@outlook.com'); // ← Your email here
-
-echo $pp->process($_POST);
-
+  require('vendor/autoload.php');
+  
+	$userName 		= $_POST['name'];
+  $userEmail	 	= $_POST['email'];
+  $userPhone    = $_POST['phone'];
+  $userMessage 		= $_POST['message'];
+  
+	$to 			= "drew_verwiel@outlook.com";
+  $subject 		= "Intern Test Contact Form Submission";
+  
+	$body 			= "Information Submitted:";
+	$body .= "\r\n Name: " . $userName;
+  $body .= "\r\n Email: " . $userEmail;
+  $body .= "\r\n Phone Number: " . $userPhone;
+	$body .= "\r\n Message: " . $userMessage;
+	mail($to, $subject, $body);
 ?>
+
+<!-- Would normally just use https://formspree.io/ -->

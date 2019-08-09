@@ -17,3 +17,5 @@ Thanks for your message!
 	$body .= "\r\n Message: " . $userMessage;
 	mail($to, $subject, $body);
 ?>
+
+<!-- Would normally just use https://formspree.io/ -->

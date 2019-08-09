@@ -20,6 +20,7 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
   margin: auto;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .heading {
@@ -34,31 +35,33 @@ header {
   padding: .5em;
   border-top: 15px solid black;
   background-color: rgb(0, 88, 162);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Product Cards */
 .collections {
   justify-content: space-between;
   display: flex;
 }
 
-
-
 /* Card Information */
 .discount {
-  height: 50px;
-  width: 50px;
-  color: white;
+  padding: 2%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  font-size: 12px;
   font-weight: bold;
   border-radius: 50%;
   background-color: rgb(255, 73, 26);
-  text-align: center;
-  margin-bottom: 0;
-  margin-left: 275px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
 }
 
 .product {
   text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 12px;
+  color: gray;
 }
 .pricing {
   justify-content: center;
@@ -88,6 +91,7 @@ footer{
   display: flex;
   flex-direction: column;
   width: 50%;
+  color: gray;
 }
 
 footer p {
